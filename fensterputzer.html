@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glasreinigung Karki | Fensterputzer Meisterqualität in Köln-Ehrenfeld</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Glas-Lichtreflex-Effekt für Karten */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(25deg);
+            transition: all 0.7s ease;
+            pointer-events: none;
+        }
+        .glass-card:hover::after {
+            left: 130%;
+        }
+
+        /* Schmutzige Fensterscheibe (Vorher-Layer) */
+        .dirty-glass-texture {
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(148, 163, 184, 0.45) 1px, transparent 3px),
+                radial-gradient(circle at 75% 20%, rgba(100, 116, 139, 0.4) 1.5px, transparent 4px),
+                radial-gradient(circle at 45% 70%, rgba(148, 163, 184, 0.5) 1px, transparent 3px),
+                radial-gradient(circle at 85% 65%, rgba(71, 85, 105, 0.35) 2px, transparent 5px),
+                radial-gradient(circle at 15% 80%, rgba(148, 163, 184, 0.45) 1.5px, transparent 3px),
+                linear-gradient(165deg, rgba(203, 213, 225, 0.82) 0%, rgba(148, 163, 184, 0.78) 50%, rgba(100, 116, 139, 0.85) 100%);
+            background-size: 90px 90px, 120px 120px, 70px 70px, 110px 110px, 80px 80px, 100% 100%;
+        }
+    </style>
+</head>
+<body class="bg-sky-50/40 text-slate-800 antialiased selection:bg-sky-600 selection:text-white">
+
+    <!-- Top-Info-Leiste -->
+    <div class="bg-sky-950 text-sky-100 text-xs font-medium py-2 px-4 text-center">
+        ✨ Glasreinigung Karki · Stuppstraße 20, 50823 Köln-Ehrenfeld · Direktkontakt: 0177 7956050
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-xs">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- Fensterkreuz-Logo -->
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-sky-700 p-1.5 shadow-sm grid grid-cols-2 gap-1 shrink-0">
+                    <div class="bg-white/90 rounded-[3px]"></div>
+                    <div class="bg-white/60 rounded-[3px]"></div>
+                    <div class="bg-white/60 rounded-[3px]"></div>
+                    <div class="bg-white/90 rounded-[3px]"></div>
+                </div>
+                <div>
+                    <span class="text-base md:text-lg font-extrabold tracking-tight text-slate-900 block leading-none">
+                        GLASREINIGUNG <span class="text-sky-600">KARKI</span>
+                    </span>
+                    <span class="text-[11px] text-slate-500">Streifenfreier Durchblick in Köln · Seit über 20 Jahren</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
+                <a href="#leistungen" class="hover:text-sky-600 transition">Leistungen</a>
+                <a href="#rechner" class="hover:text-sky-600 transition">Preis-Rechner</a>
+                <a href="#vorteile" class="hover:text-sky-600 transition">Warum Karki?</a>
+                <a href="#kontakt" class="hover:text-sky-600 transition">Kontakt</a>
+            </nav>
+
+            <a href="#rechner" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl transition shadow-sm">
+                Preis berechnen
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section mit interaktivem Fenster-Wischer -->
+    <section class="pt-10 pb-16 md:pt-16 md:pb-20 px-4 bg-gradient-to-b from-sky-100/60 via-white to-white border-b border-sky-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Linke Spalte: Text & CTA -->
+            <div class="lg:col-span-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-white border border-sky-200 rounded-full px-4 py-1.5 text-xs text-sky-900 font-semibold shadow-2xs mb-5">
+                    <span class="text-amber-500">★★★★★</span>
+                    <span>5,0 Google-Bewertung · Über 20 Jahre Erfahrung in Köln</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+                    Kristallklare Fenster – <span class="text-sky-600">streifenfrei</span> bis in jede Ecke
+                </h1>
+                <p class="text-slate-600 text-base md:text-lg mb-7 leading-relaxed">
+                    Ob Privatwohnung, Einfamilienhaus, Wintergarten oder Ladenlokal in Köln-Ehrenfeld und ganz Köln: Wir reinigen Glas, Rahmen und Fensterbänke zuverlässig und zum fairen Festpreis.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href="#rechner" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-7 py-4 rounded-xl text-sm md:text-base transition shadow-md text-center">
+                        In 30 Sek. Preis berechnen →
+                    </a>
+                    <a href="tel:01777956050" class="bg-white hover:bg-sky-50 border border-slate-300 text-slate-800 font-bold px-6 py-4 rounded-xl text-sm md:text-base transition text-center">
+                        📞 0177 7956050
+                    </a>
+                </div>
+            </div>
+
+            <!-- Rechte Spalte: Kreatives Interaktives Vorher/Nachher-Fenster -->
+            <div class="lg:col-span-6">
+                <div class="bg-white p-3 rounded-3xl shadow-xl border border-sky-100">
+                    <!-- Fensterrahmen -->
+                    <div id="windowFrame" class="relative h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden select-none cursor-ew-resize border-4 border-slate-800 shadow-inner" style="touch-action: pan-y;">
+                        
+                        <!-- SAUBERE SEITE (Hintergrund: Strahlender Blick auf Köln & Dom) -->
+                        <div class="absolute inset-0 bg-gradient-to-b from-sky-400 via-sky-200 to-amber-50 flex flex-col justify-between p-5">
+                            <!-- Sonne & Lichtstrahlen -->
+                            <div class="flex justify-between items-start">
+                                <span class="bg-white/90 backdrop-blur-xs text-sky-900 text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">
+                                    ✨ Nachher: Streifenfrei poliert
+                                </span>
+                                <div class="w-12 h-12 rounded-full bg-amber-300/90 blur-[1px] shadow-[0_0_40px_15px_rgba(253,224,71,0.7)]"></div>
+                            </div>
+
+                            <!-- Kölner Dom & Skyline Silhouette in gestochen scharfer Optik -->
+                            <div class="relative mt-auto pt-8">
+                                <svg viewBox="0 0 400 130" class="w-full h-32 text-sky-900/85 fill-current drop-shadow-sm">
+                                    <!-- Rhein / Uferlinie -->
+                                    <rect x="0" y="115" width="400" height="15" rx="2" class="text-sky-700/40"/>
+                                    <!-- Altstadthäuser links -->
+                                    <polygon points="20,115 20,75 38,58 56,75 56,115"/>
+                                    <polygon points="58,115 58,82 74,66 90,82 90,115"/>
+                                    <polygon points="92,115 92,70 110,54 128,70 128,115"/>
+                                    <!-- Kölner Dom Zwillingstürme -->
+                                    <polygon points="155,115 162,45 168,12 174,45 181,115"/>
+                                    <polygon points="185,115 192,45 198,12 204,45 211,115"/>
+                                    <rect x="160" y="65" width="46" height="50"/>
+                                    <polygon points="206,115 206,75 255,75 265,62 275,75 275,115"/>
+                                    <!-- Häuser rechts -->
+                                    <polygon points="285,115 285,78 302,62 319,78 319,115"/>
+                                    <polygon points="322,115 322,84 340,68 358,84 358,115"/>
+                                </svg>
+                            </div>
+
+                            <!-- Subtile Fenstersprossen im Hintergrund -->
+                            <div class="absolute inset-0 pointer-events-none grid grid-cols-2 grid-rows-2">
+                                <div class="border-r-2 border-b-2 border-slate-800/35"></div>
+                                <div class="border-b-2 border-slate-800/35"></div>
+                                <div class="border-r-2 border-slate-800/35"></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <!-- SCHMUTZIGE SEITE (Vordergrund-Layer, der weggewischt wird) -->
+                        <div id="dirtyPane" class="absolute inset-0 dirty-glass-texture backdrop-blur-[4px] flex flex-col justify-between p-5" style="clip-path: inset(0 45% 0 0);">
+                            <div class="flex justify-start">
+                                <span class="bg-slate-800/85 text-slate-100 text-[11px] font-semibold px-3 py-1 rounded-full">
+                                    🌧️ Vorher: Regen &amp; Straßenstaub
+                                </span>
+                            </div>
+                            <!-- Fenstersprossen auch auf der schmutzigen Seite -->
+                            <div class="absolute inset-0 pointer-events-none grid grid-cols-2 grid-rows-2">
+                                <div class="border-r-2 border-b-2 border-slate-800/50"></div>
+                                <div class="border-b-2 border-slate-800/50"></div>
+                                <div class="border-r-2 border-slate-800/50"></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <!-- Virtueller Abzieher / Gummilippe (Slider Handle) -->
+                        <div id="squeegeeBar" class="absolute top-0 bottom-0 w-1 bg-sky-500 shadow-[0_0_15px_rgba(14,165,233,0.9)] pointer-events-none" style="left: 55%;">
+                            <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white border-2 border-sky-600 text-sky-700 rounded-full px-3 py-1.5 shadow-lg flex items-center gap-1.5 text-xs font-extrabold whitespace-nowrap">
+                                <span>◀</span>
+                                <span>Wischen</span>
+                                <span>▶</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interaktions-Leiste unter dem Fenster -->
+                    <div class="flex items-center justify-between px-2 pt-3 pb-1">
+                        <span class="text-xs text-slate-500 font-medium">👆 Schieben Sie den Abzieher über die Scheibe</span>
+                        <button type="button" onclick="autoWipeWindow()" class="text-xs font-bold text-sky-600 hover:text-sky-800 bg-sky-50 hover:bg-sky-100 px-3 py-1.5 rounded-lg transition">
+                            ✨ Komplett abziehen
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interaktiver 30-Sekunden-Fensterputz-Kalkulator -->
+    <section id="rechner" class="py-16 px-4 bg-sky-50/50">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="text-sky-600 text-xs font-bold uppercase tracking-wider">Sofort-Preisindikation</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">Was kostet Ihre Fensterreinigung?</h2>
+                <p class="text-slate-600 text-sm mt-2">Wählen Sie Objektart und Fensteranzahl für eine unverbindliche Schätzung.</p>
+            </div>
+
+            <div class="bg-white border border-sky-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                <!-- Progress Bar -->
+                <div class="mb-6">
+                    <div class="flex justify-between text-xs text-slate-500 font-medium mb-2">
+                        <span id="stepLabel">Schritt 1 von 3</span>
+                        <span id="stepPercent">33%</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="progressBar" class="bg-sky-600 h-full transition-all duration-300" style="width: 33%"></div>
+                    </div>
+                </div>
+
+                <!-- Schritt 1: Objektart -->
+                <div id="step1" class="step-panel space-y-3">
+                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-3">1. Was möchten Sie reinigen lassen?</h3>
+                    
+                    <button type="button" onclick="selectService('Wohnung / Privatwohnung (Innen & Außen)', 65)" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-900">Wohnung / Privatwohnung</div>
+                            <div class="text-xs text-slate-500">Fensterflügel, Oberlichter &amp; Balkontüren streifenfrei</div>
+                        </div>
+                        <span class="text-sky-600 font-bold text-xs md:text-sm shrink-0 ml-2">ab 65 €</span>
+                    </button>
+
+                    <button type="button" onclick="selectService('Einfamilienhaus / Reihenhaus', 110)" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-900">Einfamilienhaus / Reihenhaus</div>
+                            <div class="text-xs text-slate-500">Alle Etagen inklusive schwer erreichbarer Fenster</div>
+                        </div>
+                        <span class="text-sky-600 font-bold text-xs md:text-sm shrink-0 ml-2">ab 110 €</span>
+                    </button>
+
+                    <button type="button" onclick="selectService('Wintergarten / Glasüberdachung', 140)" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-900">Wintergarten &amp; Glasdach</div>
+                            <div class="text-xs text-slate-500">Gründliche Entfernung von Grünbelag, Pollen &amp; Schmutz</div>
+                        </div>
+                        <span class="text-sky-600 font-bold text-xs md:text-sm shrink-0 ml-2">ab 140 €</span>
+                    </button>
+
+                    <button type="button" onclick="selectService('Schaufenster / Büro / Praxis (Gewerbe)', 55)" class="w-full text-left p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition flex justify-between items-center">
+                        <div>
+                            <div class="font-bold text-slate-900">Schaufenster, Büro &amp; Praxis</div>
+                            <div class="text-xs text-slate-500">Einmalig oder im günstigen Reinigungs-Intervall</div>
+                        </div>
+                        <span class="text-sky-600 font-bold text-xs md:text-sm shrink-0 ml-2">ab 55 €</span>
+                    </button>
+                </div>
+
+                <!-- Schritt 2: Umfang & Rahmen -->
+                <div id="step2" class="step-panel hidden space-y-4">
+                    <h3 class="text-base md:text-lg font-bold text-slate-900">2. Wie viele Fenster sind es ungefähr?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button type="button" onclick="selectSize('Kompakt (bis 8 Fenster)', 1)" class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition text-center">
+                            <div class="font-bold text-slate-900 text-sm">Kompakt</div>
+                            <div class="text-xs text-slate-500 mt-1">Bis 8 Fenster</div>
+                        </button>
+                        <button type="button" onclick="selectSize('Standard (9 – 18 Fenster)', 1.65)" class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition text-center">
+                            <div class="font-bold text-slate-900 text-sm">Standard</div>
+                            <div class="text-xs text-slate-500 mt-1">9 – 18 Fenster</div>
+                        </button>
+                        <button type="button" onclick="selectSize('Großobjekt (über 18 Fenster)', 2.4)" class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:border-sky-500 hover:bg-sky-50/40 transition text-center">
+                            <div class="font-bold text-slate-900 text-sm">Großobjekt</div>
+                            <div class="text-xs text-slate-500 mt-1">Über 18 Fenster</div>
+                        </button>
+                    </div>
+                    <button type="button" onclick="goStep(1)" class="text-xs text-slate-500 hover:text-slate-900 font-medium pt-2">← Zurück</button>
+                </div>
+
+                <!-- Schritt 3: Ergebnis & Anfrage -->
+                <div id="step3" class="step-panel hidden space-y-5">
+                    <div class="bg-sky-50 border border-sky-200 rounded-xl p-5 text-center">
+                        <span class="text-xs text-sky-800 uppercase tracking-wider font-bold">Unverbindliche Preis-Schätzung (inkl. Rahmenwäsche)</span>
+                        <div id="priceRange" class="text-2xl md:text-3xl font-extrabold text-slate-900 my-2">85 € – 115 €</div>
+                        <p id="summaryText" class="text-xs text-slate-600"></p>
+                    </div>
+
+                    <form id="leadForm" class="space-y-3">
+                        <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_KEY">
+                        <input type="hidden" name="subject" value="Neue Fensterputz-Anfrage - Glasreinigung Karki">
+                        <input type="hidden" id="hiddenDetails" name="kalkulation">
+
+                        <div>
+                            <label class="block text-xs text-slate-600 font-semibold mb-1">Ihr Name *</label>
+                            <input type="text" name="name" required placeholder="Max Mustermann" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 font-semibold mb-1">Telefonnummer für Rückruf / WhatsApp *</label>
+                            <input type="tel" name="phone" required placeholder="0177 / 0221..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-600 font-semibold mb-1">Stadtteil in Köln &amp; Wunschtermin</label>
+                            <input type="text" name="location" placeholder="z.B. Köln-Ehrenfeld, nächste Woche" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white">
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3.5 rounded-lg text-sm transition shadow-sm">
+                            Unverbindlichen Termin anfragen
+                        </button>
+                    </form>
+
+                    <div id="successBox" class="hidden bg-emerald-50 border border-emerald-300 text-emerald-900 p-4 rounded-xl text-sm text-center">
+                        ✅ Vielen Dank! Ihre Anfrage wurde an <strong>Glasreinigung Karki</strong> übermittelt. Wir melden uns kurzfristig bei Ihnen.
+                    </div>
+
+                    <button type="button" onclick="goStep(1)" class="text-xs text-slate-500 hover:text-slate-900 block mx-auto font-medium">Rechner neu starten</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leistungen im Glas-Karten-Design -->
+    <section id="leistungen" class="py-16 px-4 bg-white border-t border-sky-100">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-sky-600 text-xs font-bold uppercase tracking-wider">Privat &amp; Gewerbe in ganz Köln</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">Unsere Reinigungsleistungen</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="glass-card border border-sky-100 p-6 rounded-2xl shadow-xs">
+                    <div class="text-sky-600 text-2xl mb-3">🪟</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Fenster &amp; Rahmen</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Gründliche Reinigung von Glasflächen, Fensterrahmen, Falzen und Fensterbänken innen wie außen.</p>
+                </div>
+                <div class="glass-card border border-sky-100 p-6 rounded-2xl shadow-xs">
+                    <div class="text-sky-600 text-2xl mb-3">☀️</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Wintergärten &amp; Vordächer</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Schonende Glasdachreinigung für maximale Lichtausbeute ohne Schlieren oder Kalkränder.</p>
+                </div>
+                <div class="glass-card border border-sky-100 p-6 rounded-2xl shadow-xs">
+                    <div class="text-sky-600 text-2xl mb-3">🏪</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Schaufenster &amp; Büros</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Repräsentative Glasfronten für Geschäfte, Arztpraxen und Kanzleien in Köln – pünktlich &amp; diskret.</p>
+                </div>
+                <div class="glass-card border border-sky-100 p-6 rounded-2xl shadow-xs">
+                    <div class="text-sky-600 text-2xl mb-3">✨</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Altbau &amp; Sprossenfenster</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Sorgfältige Handarbeit auch bei klassischen Kölner Altbaufenstern und hohen Decken.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt & Footer -->
+    <footer id="vorteile" class="py-14 px-4 bg-sky-50/70 border-t border-sky-100 text-sm text-slate-700">
+        <div id="kontakt" class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="text-sky-600 text-xs font-bold uppercase tracking-wider">Ihr Fensterputzer vor Ort</span>
+                <h3 class="text-2xl font-extrabold text-slate-900 mt-1 mb-3">Glasreinigung Karki Köln</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    Seit über 20 Jahren sorgen wir in Ehrenfeld und allen Kölner Stadtteilen für saubere Aussichten – persönlich, pünktlich und mit besten Empfehlungen unserer Stammkunden.
+                </p>
+                <ul class="space-y-1.5 text-sm">
+                    <li>📍 <strong>Standort:</strong> Stuppstraße 20, 50823 Köln-Ehrenfeld</li>
+                    <li>📱 <strong>Mobil &amp; WhatsApp:</strong> <a href="tel:01777956050" class="text-sky-600 font-bold hover:underline">0177 7956050</a></li>
+                    <li>✉️ <strong>E-Mail:</strong> <a href="mailto:glasreinigungkarki@gmx.de" class="text-sky-600 font-bold hover:underline">glasreinigungkarki@gmx.de</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white border border-sky-100 p-7 rounded-2xl shadow-sm">
+                <h4 class="font-bold text-slate-900 text-lg mb-2">Direkt Termin vereinbaren</h4>
+                <p class="text-xs text-slate-600 leading-relaxed mb-5">
+                    Rufen Sie uns einfach an, schreiben Sie uns per WhatsApp oder nutzen Sie oben den Online-Rechner für Ihr unverbindliches Angebot.
+                </p>
+                <a href="tel:01777956050" class="block w-full text-center bg-sky-950 hover:bg-sky-900 text-white font-bold py-3.5 rounded-xl text-sm transition">
+                    Jetzt anrufen: 0177 7956050
+                </a>
+            </div>
+        </div>
+        <div class="max-w-5xl mx-auto mt-10 pt-6 border-t border-sky-200/60 text-center text-xs text-slate-400">
+            © 2026 Glasreinigung Karki · Stuppstraße 20 · 50823 Köln-Ehrenfeld
+        </div>
+    </footer>
+
+    <script>
+        /* --- 1. Interaktiver Fenster-Wischer (Vorher/Nachher Slider) --- */
+        const windowFrame = document.getElementById('windowFrame');
+        const dirtyPane = document.getElementById('dirtyPane');
+        const squeegeeBar = document.getElementById('squeegeeBar');
+        let isDragging = false;
+
+        function updateWiper(clientX) {
+            const rect = windowFrame.getBoundingClientRect();
+            let pos = ((clientX - rect.left) / rect.width) * 100;
+            pos = Math.max(0, Math.min(100, pos));
+            dirtyPane.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+            squeegeeBar.style.left = `${pos}%`;
+        }
+
+        windowFrame.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateWiper(e.clientX);
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateWiper(e.clientX);
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        windowFrame.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateWiper(e.touches[0].clientX);
+        }, { passive: true });
+        windowFrame.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            updateWiper(e.touches[0].clientX);
+        }, { passive: true });
+        windowFrame.addEventListener('touchend', () => { isDragging = false; });
+
+        function autoWipeWindow() {
+            let current = 55;
+            const interval = setInterval(() => {
+                current -= 3;
+                if (current <= 0) {
+                    current = 0;
+                    clearInterval(interval);
+                }
+                dirtyPane.style.clipPath = `inset(0 ${100 - current}% 0 0)`;
+                squeegeeBar.style.left = `${current}%`;
+            }, 16);
+        }
+
+        /* --- 2. 30-Sekunden-Preisrechner --- */
+        let state = { serviceName: '', basePrice: 0, sizeLabel: '', multiplier: 1 };
+
+        function goStep(step) {
+            document.querySelectorAll('.step-panel').forEach(el => el.classList.add('hidden'));
+            document.getElementById('step' + step).classList.remove('hidden');
+            let pct = step === 1 ? '33%' : (step === 2 ? '66%' : '100%');
+            document.getElementById('stepLabel').innerText = `Schritt ${step} von 3`;
+            document.getElementById('stepPercent').innerText = pct;
+            document.getElementById('progressBar').style.width = pct;
+        }
+
+        function selectService(name, price) {
+            state.serviceName = name;
+            state.basePrice = price;
+            goStep(2);
+        }
+
+        function selectSize(label, multiplier) {
+            state.sizeLabel = label;
+            state.multiplier = multiplier;
+
+            const totalMin = Math.round(state.basePrice * state.multiplier);
+            const totalMax = Math.round(totalMin * 1.25);
+
+            document.getElementById('priceRange').innerText = `${totalMin.toLocaleString()} € – ${totalMax.toLocaleString()} €`;
+            const summary = `${state.serviceName} (${state.sizeLabel})`;
+            document.getElementById('summaryText').innerText = summary;
+            document.getElementById('hiddenDetails').value = `${summary} | Schätzung: ${totalMin}€ - ${totalMax}€`;
+
+            goStep(3);
+        }
+
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Wird gesendet...';
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+
+            try {
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(object)
+                });
+            } catch (error) {}
+
+            this.classList.add('hidden');
+            document.getElementById('successBox').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
